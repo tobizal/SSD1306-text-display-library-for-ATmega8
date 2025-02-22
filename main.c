@@ -11,17 +11,7 @@
 
 
 int main(){
-	i2c_start();
-	i2c_send_address(DISPLAY_ADDRESS, WRITE);
-	i2c_send_byte(CO_CTRL); // continous control
-	i2c_send_byte(CHARGE_PUMP_SETTING);
-	i2c_send_byte(ENABLE_CHARGE_PUMP);
-	i2c_send_byte(DISPLAY_ON_NORMAL_MODE);
-	// i2c_send_byte(DISPLAY_FULL_ON);
-	i2c_send_byte(0xB3); // horizontal offset
-	i2c_stop();
-	
-	clear_screen();
+	init_display();
 	//write_screen();
 	while (1) {
 		prints("ABCDEFGHI\nJKLMNO\nPRSTUWVXYZ");

@@ -18,6 +18,7 @@
 #define RIGHT_HORIZONTAL_SCROLL 0x26    
 #define VERTICAL_RIGHT_HORIZONTAL_SCROLL 0x29
 
+void init_display();
 void clear_screen();
 void clear_row();
 void printc(char c);
