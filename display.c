@@ -35,23 +35,6 @@ void init_display() {
 	i2c_stop();
 }
 
-
-void write_screen() {
-	for (uint8_t i = 0; i < 15; i++) {
-		i2c_start();
-		i2c_send_address(DISPLAY_ADDRESS, WRITE);
-		i2c_send_byte(CO_DATA);
-		//for (uint16_t i = 0; i < 300; i++) {
-		//	if (i % 8 < 4) i2c_send_byte(0x0F);
-		//	else i2c_send_byte(0xF0);
-		//}
-		//for (int j = 0; j < 8; j++) {
-		//	i2c_send_byte(font[i][j]);
-		//}
-		i2c_stop();
-	}
-}
-
 void clear_screen() {
 	reset_cursor();
     for (uint8_t i = 0; i < 8; i++) {
