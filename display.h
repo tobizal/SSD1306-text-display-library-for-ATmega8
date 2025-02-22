@@ -20,5 +20,5 @@
 
 void clear_screen();
 void clear_row();
-void newline();
 void printc(char c);
+void prints(char* s);

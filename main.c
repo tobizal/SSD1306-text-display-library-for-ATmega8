@@ -23,37 +23,14 @@ int main(){
 	
 	clear_screen();
 	//write_screen();
-	printc('A');
-	newline();
-	printc('B');
-	printc('C');
-	printc('D');
-	printc('E');
-	printc('F');
-	printc('G');
-	printc('H');
-	printc('I');
-	printc('J');
-	printc('K');
-	printc('L');
-	printc('M');
-	printc('N');
-	printc('O');
-	printc('P');
-	printc('R');
-	printc('S');
-	printc('T');
-	printc('U');
-	printc('W');
-	printc('V');
-	printc('X');
-	printc('Y');
-	printc('Z');
-	newline();
-	for (unsigned int i = 0; i < 255; i++) {
-		printc('0' + (i % 10));
-		_delay_ms(50);
-	}
+	while (1) {
+		prints("ABCDEFGHI\nJKLMNO\nPRSTUWVXYZ");
+		for (unsigned int i = 0; i < 155; i++) {
+			printc('0' + (i % 10));
+			_delay_ms(20);
+		}
+		printc('\f');
+ 	}
 
 	error(10);
 

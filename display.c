@@ -105,12 +105,19 @@ void printc(char c) {
 	else if (c == '\n') {
 		newline();
 		return;
-	}
+	} else if (c == '\f') {
+        clear_screen();
+        return;
+    }
 	i2c_start();
 	i2c_send_address(DISPLAY_ADDRESS, WRITE);
 	i2c_send_byte(CO_DATA);
 	for (int i = 0; i < 8; i++) i2c_send_byte(font[idx][i]);
 	i2c_stop();
+}
+
+void prints(char* c) {
+    while (*c != '\0') printc(*(c++));
 }
 
 void newline() {
