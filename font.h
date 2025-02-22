@@ -1,2 +1,2 @@
 // 0-9A-Z
-char font[36][8];
+const unsigned char font[36][8];
