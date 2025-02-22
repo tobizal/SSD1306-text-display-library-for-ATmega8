@@ -24,6 +24,7 @@ void printc(char c);
 void prints(char* s);
 
 void init_display() {
+    clear_screen();
     i2c_start();
 	i2c_send_address(DISPLAY_ADDRESS, WRITE);
 	i2c_send_byte(CO_CTRL); // continous control
@@ -31,9 +32,7 @@ void init_display() {
 	i2c_send_byte(ENABLE_CHARGE_PUMP);
 	i2c_send_byte(DISPLAY_ON_NORMAL_MODE);
 	// i2c_send_byte(DISPLAY_FULL_ON);
-	i2c_send_byte(0xB3); // horizontal offset
 	i2c_stop();
-    clear_screen();
 }
 
 
